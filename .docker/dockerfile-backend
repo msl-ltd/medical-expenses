@@ -1,0 +1,7 @@
+FROM node:14.16.0
+
+WORKDIR /home/node/medical-expenses/backend
+
+EXPOSE 3000
+
+CMD ["npm", "run", "start"]
