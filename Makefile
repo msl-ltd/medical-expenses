@@ -32,15 +32,15 @@ f-update:
 # フロントエンドテスト
 f-test:
 	cd ./frontend && \
-	ng test
+	npm run test
 
 # フロントエンドリント
 f-lint:
 	cd ./frontend && \
-	ng lint
+	npm run lint
 
 # フロントエンド起動
 f-start:
 	-make stop service=frontend
 	cd ./frontend && \
-	ng serve
+	npm start
