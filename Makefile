@@ -2,6 +2,18 @@
 cat:
 	$@ ./Makefile
 
+# セットアップ
+setup:
+	make cli
+	make ci dir=frontend
+	make ci dir=backend
+	make build
+
+# Angular CLI取得
+cli:
+	npm un -g @angular/cli
+	npm i -g @angular/cli
+
 # イメージ作成
 build:
 	docker-compose -f .\.docker\docker-compose.yml build
