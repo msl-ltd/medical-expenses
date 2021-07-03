@@ -14,33 +14,33 @@ down:
 stop:
 	docker-compose -f .\.docker\docker-compose.yml stop $(service)
 
-# フロントエンド ライブラリ取得
-f-install:
-	cd ./frontend && \
+# ライブラリ取得
+install:
+	cd ./$(dir) && \
 	npm ci
 
-# フロントエンド ライブラリアップデート確認
-f-audit:
-	cd ./frontend && \
+# ライブラリアップデート確認
+audit:
+	cd ./$(dir) && \
 	npm audit
 
-# フロントエンド ライブラリアップデート
-f-update:
-	cd ./frontend && \
+# ライブラリアップデート
+update:
+	cd ./$(dir) && \
 	npm update
 
-# フロントエンドテスト
-f-test:
-	cd ./frontend && \
+# テスト
+test:
+	cd ./$(dir) && \
 	npm run test
 
-# フロントエンドリント
-f-lint:
-	cd ./frontend && \
+# リント
+lint:
+	cd ./$(dir) && \
 	npm run lint
 
-# フロントエンド起動
-f-start:
-	-make stop service=frontend
-	cd ./frontend && \
+# 起動
+start:
+	-make stop service=$(dir)
+	cd ./$(dir) && \
 	npm start
