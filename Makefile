@@ -8,6 +8,7 @@ setup:
 	make ci dir=frontend
 	make ci dir=backend
 	make build
+	make up
 
 # Angular CLI取得
 cli:
