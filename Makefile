@@ -4,15 +4,15 @@ build:
 
 # Docker起動
 up:
-	docker-compose -f .\.docker\docker-compose.yml up $(service)
+	docker-compose -f .\.docker\docker-compose.yml $@ $(service)
 
 # Docker終了
 down:
-	docker-compose -f .\.docker\docker-compose.yml down $(service)
+	docker-compose -f .\.docker\docker-compose.yml $@ $(service)
 
 # Docker停止
 stop:
-	docker-compose -f .\.docker\docker-compose.yml stop $(service)
+	docker-compose -f .\.docker\docker-compose.yml $@ $(service)
 
 # ライブラリ取得
 ci:
