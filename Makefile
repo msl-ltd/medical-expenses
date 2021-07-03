@@ -14,43 +14,22 @@ cli:
 	npm un -g @angular/cli
 	npm i -g @angular/cli
 
-# Dockerイメージ作成
-build:
-	docker-compose -f .\.docker\docker-compose.yml build
-
-# Docker起動
-up:
-	docker-compose -f .\.docker\docker-compose.yml $@ $(service)
-
-# Docker終了
-down:
-	docker-compose -f .\.docker\docker-compose.yml $@ $(service)
-
-# Docker停止
+# Dockerビルド・起動
+build \
+up \
+down \
 stop:
 	docker-compose -f .\.docker\docker-compose.yml $@ $(service)
 
-# アプリケーションライブラリ取得
-ci:
-	cd ./$(dir) && \
-	npm $@
-
-# アプリケーションライブラリアップデート確認
-audit:
-	cd ./$(dir) && \
-	npm $@
-
-# アプリケーションライブラリアップデート
+# アプリケーションライブラリ取得・アップデート
+ci \
+audit \
 update:
 	cd ./$(dir) && \
 	npm $@
 
-# アプリケーションテスト
-test:
-	cd ./$(dir) && \
-	npm run $@
-
-# アプリケーションリント
+# アプリケーション検証
+test \
 lint:
 	cd ./$(dir) && \
 	npm run $@
