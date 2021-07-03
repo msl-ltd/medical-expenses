@@ -1,3 +1,7 @@
+# Makefile内容表示
+cat:
+	$@ ./Makefile
+
 # イメージ作成
 build:
 	docker-compose -f .\.docker\docker-compose.yml build
