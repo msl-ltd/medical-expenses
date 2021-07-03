@@ -20,7 +20,7 @@ build \
 down:
 	docker-compose -f .\.docker\docker-compose.yml $@
 
-# Docker起動・停止・終了
+# Docker起動・停止
 up \
 stop:
 	docker-compose -f .\.docker\docker-compose.yml $@ $(service)
