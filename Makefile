@@ -15,32 +15,32 @@ stop:
 	docker-compose -f .\.docker\docker-compose.yml stop $(service)
 
 # ライブラリ取得
-install:
+ci:
 	cd ./$(dir) && \
-	npm ci
+	npm $@
 
 # ライブラリアップデート確認
 audit:
 	cd ./$(dir) && \
-	npm audit
+	npm $@
 
 # ライブラリアップデート
 update:
 	cd ./$(dir) && \
-	npm update
+	npm $@
 
 # テスト
 test:
 	cd ./$(dir) && \
-	npm run test
+	npm run $@
 
 # リント
 lint:
 	cd ./$(dir) && \
-	npm run lint
+	npm run $@
 
 # 起動
 start:
 	-make stop service=$(dir)
 	cd ./$(dir) && \
-	npm start
+	npm $@
