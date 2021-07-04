@@ -1,4 +1,4 @@
-version: '2'
+version: "2"
 
 services:
   frontend:
@@ -16,7 +16,19 @@ services:
     build:
       context: ./
       dockerfile: dockerfile-backend
+    depends_on:
+      - db
     ports:
       - "3000:3000"
     volumes:
       - ../backend:/home/node/medical-expenses/backend
+
+  db:
+    build:
+      context: ./
+      dockerfile: dockerfile-db
+    ports:
+      - 5432:5432
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
