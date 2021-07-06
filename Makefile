@@ -15,14 +15,14 @@ cli:
 	npm un -g @angular/cli
 	npm i -g @angular/cli
 
-# Dockerビルド・終了
-build \
-down:
+# Dockerビルド
+build:
 	docker-compose -f .\.docker\docker-compose.yml $@
 
-# Docker起動・停止
+# Docker起動・停止・終了
 up \
-stop:
+stop \
+down:
 	docker-compose -f .\.docker\docker-compose.yml $@ $(service)
 
 # アプリケーションライブラリ取得・アップデート
