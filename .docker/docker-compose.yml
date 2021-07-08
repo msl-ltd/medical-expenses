@@ -18,6 +18,8 @@ services:
       dockerfile: dockerfile-backend
     depends_on:
       - db
+    environment:
+      CHOKIDAR_USEPOLLING: 1
     ports:
       - "3000:3000"
     volumes:
