@@ -3,6 +3,8 @@ cat:
 	$@ ./Makefile
 
 # セットアップ
+# up後にconsoleでシェルを実行してテーブルを作成する
+# /home/node/medical-expenses/db/schema/init.sh
 setup:
 	make cli
 	make ci dir=frontend
@@ -24,6 +26,10 @@ down:
 up \
 stop:
 	docker-compose -f .\.docker\docker-compose.yml $@ $(service)
+
+# Dockerコンソール
+console:
+	docker exec -it docker_$(service)_1 bash
 
 # アプリケーションライブラリ取得・アップデート
 ci \
