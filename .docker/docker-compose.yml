@@ -33,4 +33,5 @@ services:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: postgres
     volumes:
-      - ../db:/home/node/medical-expenses/db
+      - ../db/schema:/home/node/medical-expenses/db/schema
+      - ../db/data:/var/lib/postgresql/data
