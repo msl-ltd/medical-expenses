@@ -2,6 +2,11 @@
 cat:
 	$@ ./Makefile
 
+# Git プル・プッシュ
+pull \
+push:
+	git $@
+
 # セットアップ
 # up後にconsoleでシェルを実行してテーブルを作成する
 # /home/node/medical-expenses/db/schema/init.sh
