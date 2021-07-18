@@ -15,7 +15,7 @@ setup:
 	make ci dir=frontend
 	make ci dir=backend
 	make build
-	make up
+	make up service=db
 
 # Angular CLI取得
 cli:
