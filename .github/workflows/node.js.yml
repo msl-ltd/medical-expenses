@@ -11,7 +11,7 @@ on:
 
 defaults:
   run:
-    working-directory: medical-expenses/frontend
+    working-directory: ./frontend
 
 jobs:
   build:
